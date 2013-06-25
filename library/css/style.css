@@ -17,20 +17,25 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 }
-html { font-size: 100%; }
+html { font-size: 100%;  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { font-size: 1em; line-height: 1.4; text-rendering:optimizeLegibility; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
-h1 { }
-h2 { }
-h3 { }
-h4 { }
-h5 { }
-h6 { }
+h1 { font-size: 2em;   margin: 0 0 0.4em 0; }
+h2 { font-size: 1.5em; margin: 0 0 0.8em 0; }
+h3 { font-size: 1.4em; margin: 0 0 0.7em 0; }
+h4 { font-size: 1.3em; margin: 0 0 0.6em 0; }
+h5 { font-size: 1.2em; margin: 0 0 0.5em 0; }
+h6 { font-size: 1.1em; margin: 0 0 0.4em 0; }
 
 a { color: #0066cc; }
 a:focus,
 a:hover { color: #003399; }
+
+strong 	{ }
+small	{ font-size: 0.83em; }
+em 		{ font-style: italic; }
+p 		{ margin-bottom: 1em; }
 
 /* Image alignment & Media
 ============================================================ */
@@ -42,13 +47,13 @@ img,
 audio,
 video,
 canvas { max-width: 100%; }
-
+img { height: auto; }
 
 /* Micro Clearfix
 ============================================================ */
-.cf:before, .cf:after { content:""; display:table; }
-.cf:after { clear:both; }
-.cf { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
+.cf:before, .cf:after, .row:before, .row:after { content:""; display:table; }
+.cf:after, .row:after { clear:both; }
+.cf, .row { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
 
 
 /* Grid > 6 Column Mobile First
