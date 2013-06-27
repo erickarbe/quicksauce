@@ -35,7 +35,7 @@ a:hover { color: #003399; }
 strong 	{ }
 small	{ font-size: 0.83em; }
 em 		{ font-style: italic; }
-p 		{ margin-bottom: 1em; }
+p 		{ margin: 0 0 1em 0; }
 
 /* Image alignment & Media
 ============================================================ */
@@ -64,7 +64,7 @@ img { height: auto; }
 .row { clear: both; }
 
 
-@media screen and (min-width: 480px) {
+@media all and (min-width: 480px) {
 
 	.container { width: 98%; }
 
@@ -95,7 +95,7 @@ img { height: auto; }
 }
 
 
-@media screen and (min-width: 640px) {
+@media all and (min-width: 640px) {
 
 	.aligncenter { display: block; margin: 0 auto 1em; }
 	.alignleft { display: inline; float: left; margin: 0 1em 1em 0; }
@@ -109,10 +109,6 @@ img { height: auto; }
 	.grid-5     { width: 80.30303030303%; }
 	.grid-6,
 	.grid-full  { width: 96.969696969697%; }
-	
-	.gallery .grid-unit {
-	width: 30.30303030303%;
-	}
 
 
 }
