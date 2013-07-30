@@ -8,7 +8,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	1. Normalize.css
 	2. Box-sizing on everything (much easier when building responsively)
 	3. Mobile First! using min-width for media queries
-	4. Easy to use Grid System! Based on Dave Rupert's "Foldy 960"
+	4. Easy to use and flexible Grid System
 	
 */
 
@@ -17,7 +17,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 }
-html { font-size: 100%;  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 100%;  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; overflow-y: scroll; }
 body { font-size: 1em; line-height: 1.4; text-rendering:optimizeLegibility; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
@@ -56,9 +56,20 @@ img { height: auto; }
 .cf, .row { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
 
 
-/* Grid > 6 Column Mobile First
-   The container "throttles" the width of the content on 
-   your site. Make it bigger if you wish!
+/* 12 Column Mobile First Grid
+    == The Math: 
+      100/12 = 8.3333333333
+      
+    == Each column is 8.333333333% wide, minus 1% margin on each side. 
+    == So each column is effectively 6.3333333333% wide. 
+    == I used 10 decimal places cause I likes it like that.
+    
+   Side Notes: 
+    == The container "throttles" the width of the content.
+    == Media Queries are in ems. Make sure to keep the html set 
+      to a font-size of 100% to keep ems relative to pixels. This
+      makes the math easy.
+
 ============================================================ */
 .container { max-width: 980px; width:92%; margin:0px auto; position: relative; }
 .row { clear: both; }
@@ -68,29 +79,26 @@ img { height: auto; }
 
 	.container { width: 98%; }
 
-	.grid-1,
-	.grid-2,
-	.grid-3,
-	.grid-4,
-	.grid-5,
-	.grid-6,
-	.grid-half,
-	.grid-full,
-	.grid-unit {
-	float: left;
-	width:96.969696969697%;
-	margin:0 1.515151515152% 1em;
+	.span-1,
+	.span-2,
+	.span-3,
+	.span-4,
+	.span-5,
+	.span-6,
+	.span-half,
+	.span-7,
+	.span-8,
+	.span-9,
+	.span-10,
+	.span-11,
+	.span-12 {
+	  float: left;
+    width:96.969696969697%;
+    margin:0 1% 1em;
 	}
+
+	.span-half { width: 48%; margin: 0 1% 1em; }
 	
-	.gallery .grid-unit,
-	.grid-half {
-	width:46.969696969697%;
-	margin: 0 1.515151515152% 1em;
-	}
-	
-	.grid-flow-opposite{
-	float:right
-	}
 
 }
 
@@ -100,22 +108,29 @@ img { height: auto; }
 	.aligncenter { display: block; margin: 0 auto 1em; }
 	.alignleft { display: inline; float: left; margin: 0 1em 1em 0; }
 	.alignright { display: block; float: right; margin: 0 0 1em 1em; }
-	
-	.grid-1     { width: 13.636363636364%; }
-	.grid-2     { width: 30.30303030303%; }
-	.grid-3,
-	.grid-half  { width: 46.969696969697%; }
-	.grid-4     { width: 63.636363636364%; }
-	.grid-5     { width: 80.30303030303%; }
-	.grid-6,
-	.grid-full  { width: 96.969696969697%; }
-
-
+  
+  
+  div[class*='span-'] { margin: 0 1%; float: left; }
+  .span-1     { width: 6.3333333333%; }
+  .span-2     { width: 14.6666666667%; }
+  .span-3     { width: 23%; }
+  .span-4     { width: 31.3333333333%; }
+  .span-5     { width: 39.6666666667%; }
+  .span-6,
+  .span-half  { width: 48%; }
+  .span-7     { width: 56.3333333333%; }
+  .span-8     { width: 64.6666666666%; }
+  .span-9     { width: 73%; }
+  .span-10    { width: 81.3333333333%; }
+  .span-11    { width: 89.6666666666%; }
+  .span-12    { width: 98%; }
+  
 }
 
 /* Helpers
 ============================================================ */
-.show-grid div[class*='grid-'] {
+
+.show-grid div[class*='span-'] {
   background-color: #eee;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -124,4 +139,5 @@ img { height: auto; }
   padding: 0.5em 1em;
   margin-bottom: 1em;
   text-align: center;
+  font-size: 0.7em;
 }
