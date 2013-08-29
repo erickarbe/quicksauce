@@ -80,36 +80,27 @@ img { height: auto; }
       makes the math easy.
 
 ============================================================ */
-.container { max-width: 980px; width:92%; margin:0px auto; position: relative; }
+.container { max-width: 980px; width:94%; margin:0px auto; position: relative; }
 .row { clear: both; }
 
-
-@media all and (min-width: 480px) {
-
-	.container { width: 98%; }
-
-	.span-1,
-	.span-2,
-	.span-3,
-	.span-4,
-	.span-5,
-	.span-6,
-	.span-half,
-	.span-7,
-	.span-8,
-	.span-9,
-	.span-10,
-	.span-11,
-	.span-12 {
-	  float: left;
-    width:96.969696969697%;
-    margin:0 1% 1em;
-	}
-
-	.span-half { width: 48%; margin: 0 1% 1em; }
-	
-
+.span-1,
+.span-2,
+.span-3,
+.span-4,
+.span-5,
+.span-6,
+.span-7,
+.span-8,
+.span-9,
+.span-10,
+.span-11,
+.span-12 {
+  width:100%;
+  margin-bottom: 1em;
+  position: relative;
+  min-height: 1px;
 }
+
 
 
 @media all and (min-width: 640px) {
@@ -119,20 +110,34 @@ img { height: auto; }
 	.alignright { display: block; float: right; margin: 0 0 1em 1em; }
   
   
-  div[class*='span-'] { margin: 0 1%; float: left; }
-  .span-1     { width: 6.3333333333%; }
-  .span-2     { width: 14.6666666667%; }
-  .span-3     { width: 23%; }
-  .span-4     { width: 31.3333333333%; }
-  .span-5     { width: 39.6666666667%; }
-  .span-6,
-  .span-half  { width: 48%; }
-  .span-7     { width: 56.3333333333%; }
-  .span-8     { width: 64.6666666666%; }
-  .span-9     { width: 73%; }
-  .span-10    { width: 81.3333333333%; }
-  .span-11    { width: 89.6666666666%; }
-  .span-12    { width: 98%; }
+  div[class*='span-'] { float: left; margin-left:1.5%; }
+  div[class*='span-']:first-child { margin-left: 0; }
+  
+  .span-1  { width:6.95833333333%; }
+  .span-2  { width:15.4166666667%; }
+  .span-3  { width:23.875%; }
+  .span-4  { width:32.3333333333%; }
+  .span-5  { width:40.7916666667%; }
+  .span-6  { width:49.25%; }
+  .span-7  { width:57.7083333333%; }
+  .span-8  { width:66.1666666667%; }
+  .span-9  { width:74.625%; }
+  .span-10 { width:83.0833333333%; }
+  .span-11 { width:91.5416666667%; }
+  .span-12 { margin-left:0; width:100%; }
+  
+  
+  div[class*='span-'].offset-1  {margin-left: 8.45833333333%;}
+  div[class*='span-'].offset-2  {margin-left: 16.9166666667%;}
+  div[class*='span-'].offset-3  {margin-left: 25.375%;}
+  div[class*='span-'].offset-4  {margin-left: 33.8333333333%;}
+  div[class*='span-'].offset-5  {margin-left: 42.2916666667%;}
+  div[class*='span-'].offset-6  {margin-left: 50.75%;}
+  div[class*='span-'].offset-7  {margin-left: 59.2083333333%;}
+  div[class*='span-'].offset-8  {margin-left: 67.6666666667%;}
+  div[class*='span-'].offset-9  {margin-left: 76.125%;}
+  div[class*='span-'].offset-10 {margin-left: 84.5833333333%;}
+  div[class*='span-'].offset-11 {margin-left: 93.0416666667%;}
   
 }
 
@@ -141,12 +146,11 @@ img { height: auto; }
 
 .show-grid div[class*='span-'] {
   background-color: #eee;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  padding: 0.5em 1em;
-  margin-bottom: 1em;
   text-align: center;
   font-size: 0.7em;
+  padding-top:1em; 
+  padding-bottom: 1em;
+}
+.show-grid div[class*='span-']:nth-of-type(even){
+  background-color: #f4f4f4;
 }
