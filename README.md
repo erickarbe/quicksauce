@@ -7,11 +7,8 @@ This is definitely an opinionated way to layout your files, but everything is ni
 
 ## Features
 
+* Built MOBILE FIRST with a custom responsive grid system.
 * It's awesome.
-* Built MOBILE FIRST
-* Built on a solid, responsive grid system.
-* The latest [jQuery](http://jquery.com/) via CDN, with a local fallback.
-* The latest [Modernizr](http://modernizr.com/) build for feature detection.
 
 ### Credits
 
